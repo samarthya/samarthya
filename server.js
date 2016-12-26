@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Book = require('./Book.model');
 
-var db = 'mongodb://admin: JwCcFDK1jNqS@localhost/samarthya';
+var db = 'mongodb://admin: JwCcFDK1jNqS@$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/samarthya';
 
 
 
