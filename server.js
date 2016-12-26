@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Book = require('./Book.model');
 
-//var db = 'mongodb://samarthya-sshss.rhcloud.com/testDB';
+var db = 'mongodb://admin: JwCcFDK1jNqS@localhost/samarthya';
 
 
 
@@ -150,12 +150,16 @@ var SampleApp = function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
         });
+        
+        self.app.get("/list", function(req,resp){
+                     res.send("Bye bye!");
+                     });
     };
 
 };   /*  Sample Application.  */
 
 
-//mongoose.connect(db);
+mongoose.connect(db);
 
 /**
  *  main():  Main code.
