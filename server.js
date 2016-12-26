@@ -2,6 +2,12 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var Book = require('./Book.model');
+
+//var db = 'mongodb://samarthya-sshss.rhcloud.com/testDB';
+
 
 
 /**
@@ -149,6 +155,7 @@ var SampleApp = function() {
 };   /*  Sample Application.  */
 
 
+//mongoose.connect(db);
 
 /**
  *  main():  Main code.
