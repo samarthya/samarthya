@@ -44,7 +44,7 @@ var SampleApp = function() {
         self.dburl = 'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress + '/samarthya'
         
         if(process.env.OPENSHIFT_NODEJS_DIR){
-            self.node_modules = process.env.OPENSHIFT_NODEJS_DIR;
+            self.node_modules = process.env.OPENSHIFT_NODEJS_DIR + '/node_modules';
         }
         
         if(process.env.OPENSHIFT_MONGODB_DB_URL){
@@ -134,7 +134,6 @@ var SampleApp = function() {
         };
         
         self.routes['/node_modules*js'] = function(req, res) {
-            console.log(req);
             var strReq = req.params;
             console.log('path ' + strReq)
             res.setHeader('Content-Type', 'text/javascript');
@@ -142,7 +141,6 @@ var SampleApp = function() {
         };
         
         self.routes['/node_modules*css'] = function(req, res) {
-            console.log(req);
             var strReq = req.params;
             console.log('path ' + strReq)
             res.setHeader('Content-Type', 'text/css');
