@@ -118,7 +118,8 @@ var SampleApp = function() {
         self.routes["/list"] = function(req, res){
             res.send("<html><body>Bye bye!</body></html>");
         };
-         
+        
+        /** Added new routes for MongoDB **/
         self.routes['/books'] = function (req, res) {
             Book.find().exec(function( err, books){
                 if(err){
@@ -145,6 +146,8 @@ var SampleApp = function() {
               }
             });
         };
+        
+        
     };
 
 
@@ -155,7 +158,11 @@ var SampleApp = function() {
     self.initializeServer = function() {
         self.createRoutes();
         self.app = express();
-
+        self.app.use(bodyParser.json())
+        self.app.use(bodyParser.urlencoded({
+            extended: true
+        }));
+        
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
@@ -180,14 +187,70 @@ var SampleApp = function() {
      *  Start the server (starts up the sample application).
      */
     self.start = function() {
+        
+        mongoose.connect(self.db);
+       
+
+        self.app.post('/booksp', function(req, res){
+            var newBook = new Book();
+            console.log(req);
+            
+            if(req.body != null){
+                newBook.title=req.body.title;
+            
+                newBook.author=req.body.author;
+                newBook.category=req.body.category;
+            
+                newBook.save(function(err, book){
+                    if(err){
+                        res.send('Error saving book.');
+                    }else{
+                        console.log(book);
+                        res.send(book);
+                    }
+                });    
+            }
+            
+        });
+        
+         self.app.post('/booksp2', function(req, res){
+             console.log(' In the sp2 function');
+             Book.create(req.body, function(err, book){
+                    if(err){
+                        res.send('Error saving book.');
+                    }else{
+                        console.log(book);
+                        res.send(book);
+                    }
+                });  
+        });
+
+        self.app.put('/book/:id', function(req, res){
+            
+            console.log(' Modifying ' + req.params.id);
+            
+            Book.update({
+               _id: req.params.id
+            }, {$set: {title: req.body.title}},    
+                function(err, newBook) {
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log(newBook);
+                        res.send(newBook);
+                    }
+                }); 
+        });
+        
         //  Start the app on the specific interface (and port).
         self.app.listen(self.port, self.ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
         });
         
-        mongoose.connect(self.db);
-    };
+        
+        
+        };
 
 };   /*  Sample Application.  */
 
@@ -199,5 +262,6 @@ var SampleApp = function() {
  */
 var zapp = new SampleApp();
 zapp.initialize();
+
 zapp.start();
 
