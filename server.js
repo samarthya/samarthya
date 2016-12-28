@@ -18,7 +18,7 @@ var SampleApp = function() {
 
     //  Scope.
     var self = this;
-    var db;
+    var dburl;
 
     /*  ================================================================  */
     /*  Helper functions.                                                 */
@@ -29,9 +29,9 @@ var SampleApp = function() {
      */
     self.setupVariables = function() {
         //  Set the environment variables we need.
-        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-        
+        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+        self.port      = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT|| 3002;
+       
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
@@ -39,8 +39,12 @@ var SampleApp = function() {
             console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
             self.ipaddress = "127.0.0.1";
         };
-        //'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress
-        self.db =  process.env.OPENSHIFT_MONGODB_DB_URL + 'samarthya';
+        
+        self.dburl = 'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress + '/samarthya'
+         
+        if(process.env.OPENSHIFT_MONGODB_DB_URL){
+            self.dburl =  process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME;
+        }        
     };
 
 
@@ -243,11 +247,11 @@ var SampleApp = function() {
         self.app.listen(self.port, self.ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
-            console.log(' DB ' + self.db)
+            console.log(' DB ' + self.dburl)
         });
         
         
-        mongoose.connect(self.db);
+        mongoose.connect(self.dburl);
         
         };
 

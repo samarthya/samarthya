@@ -27,6 +27,9 @@
     "express": "~3.4.4",
     "mongoose": "^4.7.4"
   },
+    "scripts": {
+      "start": "node server.js"  
+    },
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
