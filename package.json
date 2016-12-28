@@ -24,12 +24,13 @@
   },
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bootstrap": "^4.0.0-alpha.5",
     "express": "~3.4.4",
     "mongoose": "^4.7.4"
   },
-    "scripts": {
-      "start": "node server.js"  
-    },
+  "scripts": {
+    "start": "node server.js"
+  },
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
