@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var Book = require('./Book.model');
-
+var Feedback = require('./Feedback.model');
 
 
 
@@ -52,12 +52,15 @@ var SampleApp = function() {
      *  Populate the cache.
      */
     self.populateCache = function() {
+        
         if (typeof self.zcache === "undefined") {
             self.zcache = { 'index.html': '' };
         }
+       
 
         //  Local cache for static content.
         self.zcache['index.html'] = fs.readFileSync('./index.html');
+        self.zcache['blog.css'] = fs.readFileSync('./blog.css');
     };
 
 
@@ -119,8 +122,26 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
         
-        self.routes["/list"] = function(req, res){
-            res.send("<html><body>Bye bye!</body></html>");
+        self.routes['/blog.css'] = function(req, res) {
+            console.log('CSS - BLOG');
+            res.setHeader('Content-Type', 'text/css');
+            res.send(self.cache_get('blog.css') );
+        };
+        
+        self.routes['/node_modules*js'] = function(req, res) {
+            console.log(req);
+            var strReq = req.params;
+            console.log('path ' + strReq)
+            res.setHeader('Content-Type', 'text/javascript');
+            res.send(fs.readFileSync('./node_modules' + strReq + 'js'));
+        };
+        
+        self.routes['/node_modules*css'] = function(req, res) {
+            console.log(req);
+            var strReq = req.params;
+            console.log('path ' + strReq)
+            res.setHeader('Content-Type', 'text/css');
+            res.send(fs.readFileSync('./node_modules' + strReq + 'css'));
         };
         
         /** Added new routes for MongoDB **/
@@ -214,6 +235,43 @@ var SampleApp = function() {
             
         });
         
+        /**
+         * Add the comments.
+         */
+         self.app.post('/pushfd', function(req, res){
+            var feedback = new Feedback();
+            console.log(req);
+            
+            if(req.body != null){
+                feedback.email=req.body.email;
+                feedback.telephone=req.body.telephone;
+                feedback.subject=req.body.subject;
+                feedback.comments=req.body.comments;
+                
+                feedback.save(function(err, comment){
+                    if(err){
+                        res.send('Error saving comments.');
+                    }else{
+                        console.log(comment);
+                        res.send(comment);
+                    }
+                });    
+            }
+            
+        });
+        
+        self.app.get('/comments', function(req,res){
+           
+            Feedback.find().exec(function( err, comments){
+                if(err){
+                    res.send('Error occurred reading comments');
+                } else {
+                    console.log(comments);
+                    res.json(comments);
+                }
+            });  
+      
+        });
          self.app.post('/booksp2', function(req, res){
              console.log(' In the sp2 function');
              Book.create(req.body, function(err, book){
