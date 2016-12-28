@@ -31,7 +31,8 @@ var SampleApp = function() {
         //  Set the environment variables we need.
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
         self.port      = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT|| 3002;
-       
+        
+        self.node_modules = './node_modules';
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
@@ -41,7 +42,11 @@ var SampleApp = function() {
         };
         
         self.dburl = 'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress + '/samarthya'
-         
+        
+        if(process.env.OPENSHIFT_NODEJS_DIR){
+            self.node_modules = process.env.OPENSHIFT_NODEJS_DIR;
+        }
+        
         if(process.env.OPENSHIFT_MONGODB_DB_URL){
             self.dburl =  process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME;
         }        
@@ -133,7 +138,7 @@ var SampleApp = function() {
             var strReq = req.params;
             console.log('path ' + strReq)
             res.setHeader('Content-Type', 'text/javascript');
-            res.send(fs.readFileSync('./node_modules' + strReq + 'js'));
+            res.send(fs.readFileSync(self.node_modules + strReq + 'js'));
         };
         
         self.routes['/node_modules*css'] = function(req, res) {
@@ -141,7 +146,7 @@ var SampleApp = function() {
             var strReq = req.params;
             console.log('path ' + strReq)
             res.setHeader('Content-Type', 'text/css');
-            res.send(fs.readFileSync('./node_modules' + strReq + 'css'));
+            res.send(fs.readFileSync(self.node_modules + strReq + 'css'));
         };
         
         /** Added new routes for MongoDB **/
