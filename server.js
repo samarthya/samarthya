@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Book = require('./Book.model');
 
-var db = 'mongodb://admin: JwCcFDK1jNqS@$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/samarthya';
+var db = 'mongodb://admin:JwCcFDK1jNqS@localhost/samarthya';
 
 
 
@@ -110,6 +110,21 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+        
+        self.routes["/list"] = function(req, res){
+            res.send("<html><body>Bye bye!</body></html>");
+        };
+         
+        self.routes['/books'] = function (req, res) {
+            Book.find().exec(function( err, books){
+                if(err){
+                    res.send('Error occurred');
+                } else {
+                    console.log(books);
+                    res.json(books[0]);
+                }
+            });  
+        };
     };
 
 
@@ -135,7 +150,7 @@ var SampleApp = function() {
         self.setupVariables();
         self.populateCache();
         self.setupTerminationHandlers();
-
+        
         // Create the express server and routes.
         self.initializeServer();
     };
@@ -150,10 +165,6 @@ var SampleApp = function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
         });
-        
-        self.app.get("/list", function(req,resp){
-                     res.send("Bye bye!");
-                     });
     };
 
 };   /*  Sample Application.  */
