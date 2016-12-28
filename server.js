@@ -18,7 +18,7 @@ var SampleApp = function() {
 
     //  Scope.
     var self = this;
-
+    var db;
 
     /*  ================================================================  */
     /*  Helper functions.                                                 */
@@ -39,8 +39,8 @@ var SampleApp = function() {
             console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
             self.ipaddress = "127.0.0.1";
         };
-        
-        self.db = 'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress + '/samarthya';
+        //'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress
+        self.db =  process.env.OPENSHIFT_MONGODB_DB_URL + '/samarthya';
     };
 
 
@@ -187,9 +187,6 @@ var SampleApp = function() {
      *  Start the server (starts up the sample application).
      */
     self.start = function() {
-        
-        mongoose.connect(self.db);
-       
 
         self.app.post('/booksp', function(req, res){
             var newBook = new Book();
@@ -246,9 +243,11 @@ var SampleApp = function() {
         self.app.listen(self.port, self.ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
+            console.log(' DB ' + self.db)
         });
         
         
+        mongoose.connect(self.db);
         
         };
 
@@ -262,6 +261,5 @@ var SampleApp = function() {
  */
 var zapp = new SampleApp();
 zapp.initialize();
-
 zapp.start();
 
