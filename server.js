@@ -4,9 +4,10 @@ var express = require('express');
 var fs      = require('fs');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+
 var Book = require('./Book.model');
 
-var db = 'mongodb://admin:JwCcFDK1jNqS@localhost/samarthya';
+
 
 
 
@@ -30,6 +31,7 @@ var SampleApp = function() {
         //  Set the environment variables we need.
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
         self.port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+        
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
@@ -37,6 +39,8 @@ var SampleApp = function() {
             console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
             self.ipaddress = "127.0.0.1";
         };
+        
+        self.db = 'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress + '/samarthya';
     };
 
 
@@ -121,9 +125,25 @@ var SampleApp = function() {
                     res.send('Error occurred');
                 } else {
                     console.log(books);
-                    res.json(books[0]);
+                    res.json(books);
                 }
             });  
+        };
+        
+        self.routes['/books/:id'] = function(req, res) {
+            console.log('getting all books');
+            
+            Book.findOne({
+            _id: req.params.id
+            })
+            .exec(function(err, books) {
+              if(err) {
+                res.send('error occured')
+              } else {
+                console.log(books);
+                res.json(books);
+              }
+            });
         };
     };
 
@@ -134,7 +154,7 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
+        self.app = express();
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
@@ -165,12 +185,14 @@ var SampleApp = function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
         });
+        
+        mongoose.connect(self.db);
     };
 
 };   /*  Sample Application.  */
 
 
-mongoose.connect(db);
+
 
 /**
  *  main():  Main code.
