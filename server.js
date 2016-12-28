@@ -40,7 +40,7 @@ var SampleApp = function() {
             self.ipaddress = "127.0.0.1";
         };
         //'mongodb://admin:JwCcFDK1jNqS@'+ self.ipaddress
-        self.db =  process.env.OPENSHIFT_MONGODB_DB_URL + '/samarthya';
+        self.db =  process.env.OPENSHIFT_MONGODB_DB_URL + 'samarthya';
     };
 
 
