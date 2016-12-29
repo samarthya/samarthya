@@ -5,6 +5,7 @@ var fs      = require('fs');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+
 var Book = require('./Book.model');
 var Feedback = require('./Feedback.model');
 
@@ -65,7 +66,7 @@ var SampleApp = function() {
 
         //  Local cache for static content.
         self.zcache['index.html'] = fs.readFileSync('./index.html');
-        self.zcache['blog.css'] = fs.readFileSync('./blog.css');
+        //self.zcache['blog.css'] = fs.readFileSync('./blog.css');
     };
 
 
@@ -127,25 +128,25 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
         
-        self.routes['/blog.css'] = function(req, res) {
+        /*self.routes['/blog.css'] = function(req, res) {
             console.log('CSS - BLOG');
             res.setHeader('Content-Type', 'text/css');
             res.send(self.cache_get('blog.css') );
-        };
+        };*/
         
-        self.routes['/node_modules*js'] = function(req, res) {
-            var strReq = req.params;
-            console.log('path ' + strReq)
-            res.setHeader('Content-Type', 'text/javascript');
-            res.send(fs.readFileSync(self.node_modules + strReq + 'js'));
-        };
-        
-        self.routes['/node_modules*css'] = function(req, res) {
-            var strReq = req.params;
-            console.log('path ' + strReq)
-            res.setHeader('Content-Type', 'text/css');
-            res.send(fs.readFileSync(self.node_modules + strReq + 'css'));
-        };
+//        self.routes['/node_modules*js'] = function(req, res) {
+//            var strReq = req.params;
+//            console.log('path ' + strReq)
+//            res.setHeader('Content-Type', 'text/javascript');
+//            res.send(fs.readFileSync(self.node_modules + strReq + 'js'));
+//        };
+//        
+//        self.routes['/node_modules*css'] = function(req, res) {
+//            var strReq = req.params;
+//            console.log('path ' + strReq)
+//            res.setHeader('Content-Type', 'text/css');
+//            res.send(fs.readFileSync(self.node_modules + strReq + 'css'));
+//        };
         
         /** Added new routes for MongoDB **/
         self.routes['/books'] = function (req, res) {
@@ -186,6 +187,14 @@ var SampleApp = function() {
     self.initializeServer = function() {
         self.createRoutes();
         self.app = express();
+        self.app.use(express.static('resources'));
+        
+        if(process.env.OPENSHIFT_NODEJS_DIR) {
+            self.app.use(express.static(process.env.OPENSHIFT_NODEJS_DIR + '/node_modules'));
+        } else {
+            self.app.use(express.static('node_modules'));
+        }
+        
         self.app.use(bodyParser.json())
         self.app.use(bodyParser.urlencoded({
             extended: true
