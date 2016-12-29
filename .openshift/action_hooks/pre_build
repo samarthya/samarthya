@@ -1,0 +1,10 @@
+OLD_HOME=$HOME
+
+echo "INFO: Running 'npm install'"
+cd $OPENSHIFT_REPO_DIR
+export HOME=$OPENSHIFT_REPO_DIR
+
+npm install
+
+export HOME=$OLD_HOME
+echo "INFO: HOME is $HOME"
