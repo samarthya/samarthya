@@ -190,7 +190,7 @@ var SampleApp = function() {
         self.app.use(express.static('resources'));
         
         if(process.env.OPENSHIFT_NODEJS_DIR) {
-            self.app.use(express.static(process.env.OPENSHIFT_NODEJS_DIR + '/node_modules'));
+            self.app.use(express.static(process.env.OPENSHIFT_REPO_DIR + '/node_modules'));
         } else {
             self.app.use(express.static('node_modules'));
         }
