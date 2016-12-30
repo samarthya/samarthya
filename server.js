@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 var Book = require('./Book.model');
 var Feedback = require('./Feedback.model');
-
+var Contact = require('./Contactme.model');
 
 
 
@@ -271,10 +271,58 @@ var SampleApp = function() {
             }
             
         });
+
+        self.app.saveComment = function(req) {
+            var comment = new Contact();
+            console.log(req);
+
+            if(req.body != null){
+                comment.email=req.body.email;
+                comment.name=req.body.name;
+                comment.sbj=req.body.sbj;
+                comment.comments=req.body.comments;
+
+                comment.save(function(err, comments){
+                    if(err){
+                        res.send('Error saving comments.');
+                    }else{
+                        console.log(comments);
+                        res.send(comments);
+                    }
+                });
+            }
+        }
+
+        /**
+         * Add the comments.
+         */
+        self.app.post('/savecomment', function(req, res){
+            var comment = new Contact();
+            console.log(req);
+
+            if(req.body != null){
+                comment.email=req.body.contactEmail;
+                comment.name=req.body.contactName;
+                comment.sbj=req.body.contactSubject;
+                comment.comments=req.body.contactMessage;
+
+                comment.save(function(err, comments){
+                    if(err){
+                        res.send('Error saving comments.');
+                    }else{
+                        console.log(comments);
+                        //res.send(comments)
+                        res.send('<html><body>Thank you!</body></html>');
+                        res.redirect('/');
+                    }
+                });
+            }
+
+        });
         
         self.app.get('/comments', function(req,res){
            
-            Feedback.find().exec(function( err, comments){
+            Contact.find().exec(function( err, comments){
                 if(err){
                     res.send('Error occurred reading comments');
                 } else {
