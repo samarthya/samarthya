@@ -17,5 +17,4 @@ var app = angular.module('personalApp',['ancillary']);
  */
 app.controller('mainController', ['$scope', 'commentsSrvc', function($scope, commentsSrvc){
     $scope.welcomeMessage = "This application will use Angular";
-
 }]);
