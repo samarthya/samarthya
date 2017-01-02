@@ -45,7 +45,7 @@ select {
   line-height: 3rem;
   max-width: 100%;
   background: transparent;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1em solid rgba(0, 0, 0, 0.3);
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -268,7 +268,23 @@ fieldset {
   letter-spacing: .4rem;
 }
 
+#comments-left h2 {
+  color: #0055cc;
+  margin-top: 4rem;
+  font-size: 3rem;
+}
 
+#comments-left h3 {
+  color: #24748c;
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+#comments-left p {
+  color: #001f3f;
+  font-size: .8rem;
+  font-family: 'Menlo';
+}
 
 #contact {
   background: #151515;
@@ -319,9 +335,11 @@ fieldset {
   content: "";
   display: table;
 }
+
 #contact form .form-field:after {
   clear: both;
 }
+
 #contact form .form-field label {
   font-family: "poppins-bold", sans-serif;
   font-size: 1.1rem;

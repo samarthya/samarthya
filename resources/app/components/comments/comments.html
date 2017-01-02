@@ -1,0 +1,11 @@
+<section id="comments-left">
+    <h2>Comments</h2>
+    <hr/>
+    <div ng-repeat='comment in $ctrl.objComments'>
+        <div class="col-xs-6 col-lg-4">
+            <h3>{{comment.name}}</h3>
+            <hr/>
+            <p>{{comment.comments}}</p>
+        </div>
+    </div>
+</section>

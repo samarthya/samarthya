@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="This is my personal blog.">
     <meta name="author" content="Saurabh Sharma(saurabh777@gmail.com)">
-    <link rel="icon" href="./resources/favicon32x32.ico">
+    <link rel="icon" href="favicon32x32.ico">
 
     <title>Saurabh Sharma</title>
 
@@ -190,22 +190,27 @@
         <!-- /contact-form -->
     </section>
 
-    <section id="comments-left" ng-app="personalApp">
+    <!--<section id="comments-left" ng-app="personalApp">-->
 
-        <h2>Comments</h2>
-        <hr/>
-        <div class="row" ng-controller="mainController">
-            <div ng-repeat="cmt in comments">
+        <!--<h2>Comments</h2>-->
+        <!--<hr/>-->
+        <!--<div class="row" ng-controller="mainController">-->
+            <!--<div ng-repeat="cmt in comments">-->
 
-                <div class="col-xs-6 col-lg-4">
-                    <h3>{{cmt.name}}</h3>
-                    <hr/>
-                    <p>{{cmt.comments}}</p>
-                </div>
+                <!--<div class="col-xs-6 col-lg-4">-->
+                    <!--<h3>{{cmt.name}}</h3>-->
+                    <!--<hr/>-->
+                    <!--<p>{{cmt.comments}}</p>-->
+                <!--</div>-->
 
-            </div>
-        </div>
-    </section>
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+
+    <div ng-app="personalApp">
+        <all-comments>All Comments</all-comments>
+    </div>
+    <!--<welcome-message></welcome-message>-->
 </div>
 <!-- /.container -->
 
@@ -230,9 +235,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"
         integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB"
         crossorigin="anonymous"></script>
-<script src="bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="angular/angular.min.js"></script>
-<script src="app/app.js"></script>
+<script type="application/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="angular/angular.min.js"></script>
+
+<script type="application/javascript" src="app/components/comments/comments.component.js"></script>
+<script type="application/javascript" src="app/components/welcome/welcome.component.js"></script>
+<script type="application/javascript" src="app/app.js"></script>
 
 </body>
 </html>
