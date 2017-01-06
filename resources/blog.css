@@ -2,26 +2,40 @@
  * Globals
  */
 
+
+/** Minimum Width font size **/
+
 @media (min-width: 48em) {
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
+  color: #000;
+  background: url('images/bg-image-street.jpg') repeat;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: normal;
-  color: #333;
+  color: #000;
+}
+
+p:hover {
+  text-decoration: overline;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+  color: orangered;
 }
 
 input[type="email"],
@@ -38,7 +52,6 @@ select {
   padding: 1.5rem 0;
   border: 0;
   outline: none;
-  vertical-align: middle;
   color: #313131;
   font-family: "poppins-regular", sans-serif;
   font-size: 1.5rem;
@@ -53,10 +66,10 @@ select {
   transition: all 0.3s ease-in-out;
 }
 
-
 textarea {
   min-height: 25rem;
 }
+
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -69,7 +82,6 @@ select:focus {
   color: #cc005f;
   border-bottom: 1px solid #FF0077;
 }
-
 
 input[type="submit"],
 input[type="reset"],
@@ -96,6 +108,8 @@ input[type="button"] {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
+
 /*
  * Override Bootstrap's default container.
  */
@@ -112,27 +126,33 @@ input[type="button"] {
 .blog-masthead {
   margin-bottom: 3rem;
   background-color: #428bca;
-  -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
-          box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+  -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0, 0, 0, .1);
+  box-shadow: inset 0 -.1rem .25rem rgba(0, 0, 0, .1);
 }
 
+
 /* Nav links */
+
 .nav-link {
   position: relative;
   padding: 1rem;
   font-weight: 500;
   color: #cdddeb;
 }
+
 .nav-link:hover,
 .nav-link:focus {
   color: #fff;
   background-color: transparent;
 }
 
+
 /* Active state gets a caret at the bottom */
+
 .nav-link.active {
   color: #fff;
 }
+
 .nav-link.active:after {
   position: absolute;
   bottom: 0;
@@ -157,14 +177,16 @@ input[type="button"] {
   margin-bottom: 2rem;
   border-bottom: .05rem solid #eee;
 }
+
 .blog-title {
   margin-bottom: 0;
   font-size: 2rem;
   font-weight: normal;
 }
+
 .blog-description {
   font-size: 1.1rem;
-  color: #999;
+  color: #313131;
 }
 
 @media (min-width: 40em) {
@@ -178,16 +200,20 @@ input[type="button"] {
  * Main column and sidebar layout
  */
 
+
 /* Sidebar modules for boxing content */
+
 .sidebar-module {
   padding: 1rem;
   /*margin: 0 -1rem 1rem;*/
 }
+
 .sidebar-module-inset {
   padding: 1rem;
   background-color: #f5f5f5;
   border-radius: .25rem;
 }
+
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
 .sidebar-module-inset ol:last-child {
@@ -196,10 +222,12 @@ input[type="button"] {
 
 
 /* Pagination */
+
 .blog-pagination {
   margin-bottom: 4rem;
 }
-.blog-pagination > .btn {
+
+.blog-pagination>.btn {
   border-radius: 2rem;
 }
 
@@ -211,13 +239,15 @@ input[type="button"] {
 .blog-post {
   margin-bottom: 4rem;
 }
+
 .blog-post-title {
   margin-bottom: .25rem;
   font-size: 2.5rem;
 }
+
 .blog-post-meta {
   margin-bottom: 1.25rem;
-  color: #999;
+  color:#313131;
 }
 
 
@@ -232,184 +262,14 @@ input[type="button"] {
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
 }
+
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
 
-/**
- * Contact
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
 
-.section-intro {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-bottom: 3.6rem;
-  position: relative;
-}
-.section-intro h1 {
-  font-family: "poppins-semibold", serif;
-  font-size: 3.6rem;
-  color: #313131;
-  line-height: 1.25;
-  margin-bottom: 1.2rem;
-}
-.section-intro h5 {
-  color: #FF0077;
-  font-size: 1.6rem;
-  line-height: 1.875;
-  margin-bottom: 0.3rem;
-  letter-spacing: .4rem;
-}
-
-#comments-left h2 {
-  color: #0055cc;
-  margin-top: 4rem;
-  font-size: 3rem;
-}
-
-#comments-left h3 {
-  color: #24748c;
-  margin-top: 3rem;
-  font-size: 2rem;
-}
-
-#comments-left p {
-  color: #001f3f;
-  font-size: .8rem;
-  font-family: 'Menlo';
-}
-
-#contact {
-  background: #151515;
-  padding-top: 12rem;
-  padding-bottom: 7.2rem;
-}
-#contact .section-intro h1 {
-  color: white;
-}
-#contact .section-intro h5 {
-  color: #FF0077;
-}
-#contact .section-intro p {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* contact form */
-.contact-form {
-  max-width: 740px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-form ::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.3);
-}
-.contact-form :-moz-placeholder {
-  color: rgba(255, 255, 255, 0.3);  /* Firefox 18- */
-}
-.contact-form ::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.3);  /* Firefox 19+ */
-}
-.contact-form :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.3);
-}
-.contact-form .placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-
-#contact form {
-  margin-top: 0;
-  margin-bottom: 3rem;
-}
-#contact form .form-field {
-  position: relative;
-}
-#contact form .form-field:before, #contact form .form-field:after {
-  content: "";
-  display: table;
-}
-
-#contact form .form-field:after {
-  clear: both;
-}
-
-#contact form .form-field label {
-  font-family: "poppins-bold", sans-serif;
-  font-size: 1.1rem;
-  line-height: 2.4rem;
-  position: absolute;
-  bottom: -1.2rem;
-  right: .6rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  padding: 0 2rem;
-  margin: 0;
-  color: #FFFFFF;
-  background: #FF0077;
-}
-#contact form .form-field label::after {
-  position: absolute;
-  left: -5px;
-  top: 50%;
-  margin-top: -6px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid #FF0077;
-  content: "";
-}
-#contact input[type="text"],
-#contact input[type="password"],
-#contact input[type="email"],
-#contact textarea {
-  width: 100%;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 0;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-#contact input[type="text"],
-#contact input[type="password"],
-#contact input[type="email"] {
-  height: 6.6rem;
-  padding: 1.8rem 2rem;
-}
-#contact input[type="text"]:focus,
-#contact input[type="password"]:focus,
-#contact input[type="email"]:focus {
-  border-color: #FF0077;
-  color: #FFFFFF;
-}
-#contact textarea {
-  min-height: 20rem;
-  padding: 1.8rem 2rem;
-}
-#contact textarea:focus {
-  border-color: #FF0077;
-  color: #FFFFFF;
-}
-#contact button.submitform {
-  font-size: 1.5rem;
-  display: block;
-  letter-spacing: .2rem;
-  height: 6.6rem;
-  line-height: 6.6rem;
-  padding: 0 3rem;
-  margin-top: 4.8rem;
-  width: 100%;
-  background: #FF0077;
-  color: #FFFFFF;
-}
-#contact button.submitform:hover, #contact button.submitform:focus {
-  background: #cc005f;
-}
-#message-warning, #message-success {
+#message-warning,
+#message-success {
   display: none;
   background: #0d0d0d;
   border-radius: 3px;
@@ -417,17 +277,23 @@ fieldset {
   margin-bottom: 3.6rem;
   width: 100%;
 }
+
 #message-warning {
   color: #fa0003;
 }
+
 #message-success {
   color: #FF0077;
 }
-#message-warning i, #message-success i {
+
+#message-warning i,
+#message-success i {
   margin-right: 10px;
 }
 
+
 /* form loader */
+
 #submit-loader {
   display: none;
   position: relative;
@@ -436,6 +302,7 @@ fieldset {
   width: 100%;
   text-align: center;
 }
+
 #submit-loader .text-loader {
   display: none;
   font-family: "poppins-bold", sans-serif;
@@ -443,28 +310,35 @@ fieldset {
   letter-spacing: .3rem;
   text-transform: uppercase;
 }
+
 .oldie #submit-loader .s-loader {
   display: none;
 }
+
 .oldie #submit-loader .text-loader {
   display: block;
 }
+
 .contact-info {
   margin: 4.8rem auto 0;
   font-family: "poppins-regular", sans-serif;
   font-size: 1.5rem;
   text-align: center;
 }
+
 .contact-info .collapse {
   padding: 0;
 }
+
 .contact-info .icon {
   margin-bottom: 2.1rem;
 }
+
 .contact-info .icon i {
   font-size: 4.2rem;
   color: #FFFFFF;
 }
+
 .contact-info h5 {
   color: #FF0077;
 }
