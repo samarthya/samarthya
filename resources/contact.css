@@ -21,7 +21,6 @@ fieldset {
 .section-intro h1 {
   font-family: "poppins-semibold", serif;
   font-size: 3.6rem;
-  color: #313131;
   line-height: 1.25;
   margin-bottom: 1.2rem;
 }
@@ -31,7 +30,6 @@ fieldset {
   font-size: 1.6rem;
   line-height: 1.875;
   margin-bottom: 0.3rem;
-  letter-spacing: .4rem;
 }
 
 #comments-left h2 {
@@ -56,14 +54,12 @@ fieldset {
   background: rgba(0, 0, 0, .1);
   padding-top: 12rem;
   padding-bottom: 7.2rem;
+  padding-left: .6rem;
+  padding-right: .6rem;
 }
 
 #contact .section-intro h1 {
   color: white;
-}
-
-#contact .section-intro h5 {
-  color: #FF0077;
 }
 
 #contact .section-intro p {
