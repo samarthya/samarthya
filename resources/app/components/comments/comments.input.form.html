@@ -1,0 +1,45 @@
+<section id="contact">
+    <div class="row section-intro">
+        <div class="row col-twelve">
+            <h5>Contact</h5>
+            <h1>I'd Love To Hear From You</h1>
+            <p class="lead">You can contact me for any request or service or a proposal. I do read all my mails (often), when my daughter
+                is not keeping me occupied</p>
+        </div>
+    </div>
+    <!-- /section-intro -->
+    <div class="row contact-form">
+        <div class="col-twelve">
+            <!-- form -->
+            <form name="contactForm" id="contactForm" method="post" action="/savecomment">
+                <fieldset>
+                    <div class="form-field">
+                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="true" value="Name">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="true">
+                    </div>
+                    <div class="form-field">
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" required="true">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="true"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="submitform">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+            <!-- Form End -->
+            <!-- contact-warning -->
+            <div id="message-warning">
+            </div>
+            <!-- contact-success -->
+            <div id="message-success">
+                <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+            </div>
+        </div>
+        <!-- /col-twelve -->
+    </div>
+    <!-- /contact-form -->
+</section>

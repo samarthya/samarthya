@@ -3,9 +3,16 @@
 var express = require('express');
 var fs      = require('fs');
 var bodyParser = require('body-parser');
+
+/**
+ * Mongoose database.
+ */
 var mongoose = require('mongoose');
 
 
+/**
+ * Different models that my application has.
+ */
 var Book = require('./Book.model');
 var Feedback = require('./Feedback.model');
 var Contact = require('./Contactme.model');
@@ -19,7 +26,7 @@ var SampleApp = function() {
 
     //  Scope.
     var self = this;
-    var dburl;
+    var dburl = "";
 
     /*  ================================================================  */
     /*  Helper functions.                                                 */
@@ -63,10 +70,8 @@ var SampleApp = function() {
             self.zcache = { 'index.html': '' };
         }
        
-
         //  Local cache for static content.
         self.zcache['index.html'] = fs.readFileSync('./index.html');
-        //self.zcache['blog.css'] = fs.readFileSync('./blog.css');
     };
 
 
@@ -128,25 +133,6 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
         
-        /*self.routes['/blog.css'] = function(req, res) {
-            console.log('CSS - BLOG');
-            res.setHeader('Content-Type', 'text/css');
-            res.send(self.cache_get('blog.css') );
-        };*/
-        
-//        self.routes['/node_modules*js'] = function(req, res) {
-//            var strReq = req.params;
-//            console.log('path ' + strReq)
-//            res.setHeader('Content-Type', 'text/javascript');
-//            res.send(fs.readFileSync(self.node_modules + strReq + 'js'));
-//        };
-//        
-//        self.routes['/node_modules*css'] = function(req, res) {
-//            var strReq = req.params;
-//            console.log('path ' + strReq)
-//            res.setHeader('Content-Type', 'text/css');
-//            res.send(fs.readFileSync(self.node_modules + strReq + 'css'));
-//        };
         
         /** Added new routes for MongoDB **/
         self.routes['/books'] = function (req, res) {

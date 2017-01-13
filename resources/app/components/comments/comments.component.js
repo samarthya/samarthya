@@ -31,6 +31,9 @@ ancillary.factory('commentsSrvc', ['$log', '$http', '$q', function ($log, $http,
 
 
 
+ancillary.component('commentsForm', { 
+    templateUrl:'app/components/comments/comments.input.form.html'
+});
 
 ancillary.component('allComments', {
     /**
