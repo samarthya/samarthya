@@ -1,11 +1,13 @@
+<div class="container">
 <section id="comments-left">
     <h2 ng-show="$ctrl.objComments!=null && $ctrl.objComments.length>0">Comments</h2>
     <hr/>
-    <div ng-repeat="comment in $ctrl.objComments |orderBy: 'name'">
-        <div class="col-xs-6 col-lg-4">
+    <div ng-repeat="comment in $ctrl.objComments | orderBy: 'name'">
+        <div class="col-xs-12 col-lg-6">
             <h3>{{comment.name | uppercase}}</h3>
             <hr/>
             <p>{{comment.comments | lowercase}}</p>
         </div>
     </div>
 </section>
+</div>

@@ -30,6 +30,7 @@ fieldset {
   font-size: 1.6rem;
   line-height: 1.875;
   margin-bottom: 0.3rem;
+  width: 100%;
 }
 
 #comments-left h2 {
