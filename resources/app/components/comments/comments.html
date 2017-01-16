@@ -3,9 +3,9 @@
     <hr/>
     <div ng-repeat="comment in $ctrl.objComments |orderBy: 'name'">
         <div class="col-xs-6 col-lg-4">
-            <h3>{{comment.name}}</h3>
+            <h3>{{comment.name | uppercase}}</h3>
             <hr/>
-            <p>{{comment.comments}}</p>
+            <p>{{comment.comments | lowercase}}</p>
         </div>
     </div>
 </section>
