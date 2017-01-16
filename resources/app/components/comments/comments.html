@@ -1,7 +1,7 @@
 <section id="comments-left">
     <h2 ng-show="$ctrl.objComments!=null && $ctrl.objComments.length>0">Comments</h2>
     <hr/>
-    <div ng-repeat='comment in $ctrl.objComments'>
+    <div ng-repeat="comment in $ctrl.objComments |orderBy: 'name'">
         <div class="col-xs-6 col-lg-4">
             <h3>{{comment.name}}</h3>
             <hr/>
