@@ -8,7 +8,7 @@
  * The first module of the application.
  * @type {*|angular.Module}
  */
-var app = angular.module('personalApp',['ancillary']);
+var app = angular.module('personalApp',['ancillary', 'ngRoute']);
 
 
 /**
@@ -18,3 +18,15 @@ var app = angular.module('personalApp',['ancillary']);
 app.controller('mainController', ['$scope', 'commentsSrvc', function($scope, commentsSrvc){
     $scope.welcomeMessage = "This application will use Angular";
 }]);
+
+app.config(function($routeProvider){
+    $routeProvider.when('/', {
+            controller: 'mainController',
+            templateUrl: 'app/views/welcome.html'
+    }).when('/about', {
+
+    }).
+    otherwise ({
+        redirectTo: '/'
+    });
+});
