@@ -24,7 +24,8 @@ app.config(function($routeProvider){
             controller: 'mainController',
             templateUrl: 'app/views/welcome.html'
     }).when('/about', {
-
+            controller: 'mainController',
+            templateUrl: 'app/views/about.html'
     }).
     otherwise ({
         redirectTo: '/'
