@@ -13,3 +13,4 @@ angular.module('ancillary').component('mainMenu', {
 }).run(function($log){
     $log.info('Inside Main menu');
 });
+

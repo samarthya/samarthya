@@ -18,25 +18,20 @@
 </head>
 
 <body ng-app="personalApp">
+    
     <div class="blog-masthead">
         <div class="container">
             <main-menu>Main Menu</main-menu>
         </div>
     </div>
-    <div class="blog-header">
-        <div class="container">
-            <h1 class="blog-title">Saurabh Sharma</h1>
-            <p class="lead blog-description">Change is the only constant, either you adapt or prepare for oblivion.</p>
+
+    <div class="container">
+        <div class="row">
+            <div ng-view></div>
+            <side-bar>Side Bar</side-bar>
         </div>
     </div>
-    <div ng-view></div>
-    <!-- Work starts here -->
-    <comments-form>Comments Form</comments-form>
-    <div>
-        <all-comments>All Comments</all-comments>
-    </div>
-    </div>
-    <!-- /.container -->
+
     <footer-main></footer-main>
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -54,8 +49,11 @@
             <script type="application/javascript" src="app/components/comments/comment.form.component.js"></script>
             <script type="application/javascript" src="app/components/introduction/introduction.component.js"></script>
             <script type="application/javascript" src="app/components/welcome/welcome.component.js"></script>
+            <script type="application/javascript" src="app/components/welcome/sidebar.component.js"></script>
             <script type="application/javascript" src="app/components/menu/menu.component.js"></script>
             <script type="application/javascript" src="app/components/footer/footer.component.js"></script>
+            <script type="application/javascript" src="app/components/aboutme/aboutme.component.js"></script>
+            <script type="application/javascript" src="app/controller/aboutController.js"></script>
             <script type="application/javascript" src="app/app.js"></script>
 </body>
 
