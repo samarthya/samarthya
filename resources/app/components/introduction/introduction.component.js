@@ -5,13 +5,13 @@
 angular.module('ancillary').component('introductionMessage', {
     templateUrl: 'app/components/introduction/introduction.html',
 
-    controller: ['$log', function introductionMessage($log) {
-        this.title = 'Welcome';
+    controller: ['$scope', '$log', 'appSettings', function introductionMessage($scope, $log, appSettings) {
+        $scope.appSettings = appSettings;
+        
         this.$onInit = function () {
-            $log.log('ON-INIT: IntroductionMessage')
+            $log.log('ON-INIT:(introductionMessage): IntroductionMessage')
         }
     }]
-
 
 }).run(function($log){
     $log.info('Initialized Introduction blog');
