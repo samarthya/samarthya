@@ -183,3 +183,22 @@ fieldset {
 #contact button.submitform:focus {
   background: #cc005f;
 }
+
+.slide-animation.ng-enter, .slide-animation.ng-leave {
+  transition: 0.5s linear all;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 600px;
+}
+
+.slide-animation.ng-enter {
+  z-index: 100;
+  left: 100px;
+  opacity: 0;
+}
+.slide-animation.ng-leave{
+  z-index: 101;
+  opacity: 1;
+  left: 0;
+}

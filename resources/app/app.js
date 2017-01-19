@@ -8,7 +8,7 @@
  * The first module of the application.
  * @type {*|angular.Module}
  */
-angular.module('personalApp',['ancillary', 'ngRoute']);
+angular.module('personalApp',['ancillary', 'ngRoute', 'ngAnimate']);
 
 
 
