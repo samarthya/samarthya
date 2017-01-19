@@ -26,6 +26,7 @@
     "angular": "^1.6.1",
     "angular-cookies": "^1.6.1",
     "angular-route": "^1.6.1",
+    "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
     "bootstrap": "^4.0.0-alpha.5",
     "express": "~3.4.4",
