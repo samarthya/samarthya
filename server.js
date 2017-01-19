@@ -13,8 +13,8 @@ var mongoose = require('mongoose');
 /**
  * Different models that my application has.
  */
-var Book = require('./Book.model');
-var Feedback = require('./Feedback.model');
+//var Book = require('./Book.model');
+//var Feedback = require('./Feedback.model');
 var Contact = require('./Contactme.model');
 
 
@@ -135,32 +135,32 @@ var SampleApp = function() {
         
         
         /** Added new routes for MongoDB **/
-        self.routes['/books'] = function (req, res) {
-            Book.find().exec(function( err, books){
-                if(err){
-                    res.send('Error occurred');
-                } else {
-                    console.log(books);
-                    res.json(books);
-                }
-            });  
-        };
+        // self.routes['/books'] = function (req, res) {
+        //     Book.find().exec(function( err, books){
+        //         if(err){
+        //             res.send('Error occurred');
+        //         } else {
+        //             console.log(books);
+        //             res.json(books);
+        //         }
+        //     });  
+        // };
         
-        self.routes['/books/:id'] = function(req, res) {
-            console.log('getting all books');
+        // self.routes['/books/:id'] = function(req, res) {
+        //     console.log('getting all books');
             
-            Book.findOne({
-            _id: req.params.id
-            })
-            .exec(function(err, books) {
-              if(err) {
-                res.send('error occured')
-              } else {
-                console.log(books);
-                res.json(books);
-              }
-            });
-        };
+        //     Book.findOne({
+        //     _id: req.params.id
+        //     })
+        //     .exec(function(err, books) {
+        //       if(err) {
+        //         res.send('error occured')
+        //       } else {
+        //         console.log(books);
+        //         res.json(books);
+        //       }
+        //     });
+        // };
         
         
     };
@@ -175,6 +175,9 @@ var SampleApp = function() {
         self.app = express();
         self.app.use(express.static('resources'));
         
+        /**
+         * For it to work on OpenShift server
+         */
         if(process.env.OPENSHIFT_NODEJS_DIR) {
             self.app.use(express.static(process.env.OPENSHIFT_REPO_DIR + '/node_modules'));
         } else {
@@ -189,94 +192,6 @@ var SampleApp = function() {
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
-        }
-    };
-
-
-    /**
-     *  Initializes the sample application.
-     */
-    self.initialize = function() {
-        self.setupVariables();
-        self.populateCache();
-        self.setupTerminationHandlers();
-        
-        // Create the express server and routes.
-        self.initializeServer();
-    };
-
-
-    /**
-     *  Start the server (starts up the sample application).
-     */
-    self.start = function() {
-
-        self.app.post('/booksp', function(req, res){
-            var newBook = new Book();
-            console.log(req);
-            
-            if(req.body != null){
-                newBook.title=req.body.title;
-            
-                newBook.author=req.body.author;
-                newBook.category=req.body.category;
-            
-                newBook.save(function(err, book){
-                    if(err){
-                        res.send('Error saving book.');
-                    }else{
-                        console.log(book);
-                        res.send(book);
-                    }
-                });    
-            }
-            
-        });
-        
-        /**
-         * Add the comments.
-         */
-         self.app.post('/pushfd', function(req, res){
-            var feedback = new Feedback();
-            console.log(req);
-            
-            if(req.body != null){
-                feedback.email=req.body.email;
-                feedback.telephone=req.body.telephone;
-                feedback.subject=req.body.subject;
-                feedback.comments=req.body.comments;
-                
-                feedback.save(function(err, comment){
-                    if(err){
-                        res.send('Error saving comments.');
-                    }else{
-                        console.log(comment);
-                        res.send(comment);
-                    }
-                });    
-            }
-            
-        });
-
-        self.app.saveComment = function(req) {
-            var comment = new Contact();
-            console.log(req);
-
-            if(req.body != null){
-                comment.email=req.body.email;
-                comment.name=req.body.name;
-                comment.sbj=req.body.sbj;
-                comment.comments=req.body.comments;
-
-                comment.save(function(err, comments){
-                    if(err){
-                        res.send('Error saving comments.');
-                    }else{
-                        console.log(comments);
-                        res.send(comments);
-                    }
-                });
-            }
         }
 
         /**
@@ -305,7 +220,8 @@ var SampleApp = function() {
             }
 
         });
-        
+
+
         self.app.get('/comments', function(req,res){
            
             Contact.find().exec(function( err, comments){
@@ -318,34 +234,123 @@ var SampleApp = function() {
             });  
       
         });
-         self.app.post('/booksp2', function(req, res){
-             console.log(' In the sp2 function');
-             Book.create(req.body, function(err, book){
-                    if(err){
-                        res.send('Error saving book.');
-                    }else{
-                        console.log(book);
-                        res.send(book);
-                    }
-                });  
-        });
 
-        self.app.put('/book/:id', function(req, res){
+        //  self.app.post('/pushfd', function(req, res){
+        //     var feedback = new Feedback();
+        //     console.log(req);
             
-            console.log(' Modifying ' + req.params.id);
+        //     if(req.body != null){
+        //         feedback.email=req.body.email;
+        //         feedback.telephone=req.body.telephone;
+        //         feedback.subject=req.body.subject;
+        //         feedback.comments=req.body.comments;
+                
+        //         feedback.save(function(err, comment){
+        //             if(err){
+        //                 res.send('Error saving comments.');
+        //             }else{
+        //                 console.log(comment);
+        //                 res.send(comment);
+        //             }
+        //         });    
+        //     }
             
-            Book.update({
-               _id: req.params.id
-            }, {$set: {title: req.body.title}},    
-                function(err, newBook) {
+        // });
+    };
+
+
+    /**
+     *  Initializes the sample application.
+     */
+    self.initialize = function() {
+        self.setupVariables();
+        self.populateCache();
+        self.setupTerminationHandlers();
+        
+        // Create the express server and routes.
+        self.initializeServer();
+    };
+
+
+    /**
+     *  Start the server (starts up the sample application).
+     */
+    self.start = function() {
+
+        // self.app.post('/booksp', function(req, res){
+        //     var newBook = new Book();
+        //     console.log(req);
+            
+        //     if(req.body != null){
+        //         newBook.title=req.body.title;
+            
+        //         newBook.author=req.body.author;
+        //         newBook.category=req.body.category;
+            
+        //         newBook.save(function(err, book){
+        //             if(err){
+        //                 res.send('Error saving book.');
+        //             }else{
+        //                 console.log(book);
+        //                 res.send(book);
+        //             }
+        //         });    
+        //     }
+            
+        // });
+        
+        
+
+        self.app.saveComment = function(req) {
+            var comment = new Contact();
+            console.log(req);
+
+            if(req.body != null){
+                comment.email=req.body.email;
+                comment.name=req.body.name;
+                comment.sbj=req.body.sbj;
+                comment.comments=req.body.comments;
+
+                comment.save(function(err, comments){
                     if(err){
-                        console.log(err);
-                    } else {
-                        console.log(newBook);
-                        res.send(newBook);
+                        res.send('Error saving comments.');
+                    }else{
+                        console.log(comments);
+                        res.send(comments);
                     }
-                }); 
-        });
+                });
+            }
+        }
+        
+
+        //  self.app.post('/booksp2', function(req, res){
+        //      console.log(' In the sp2 function');
+        //      Book.create(req.body, function(err, book){
+        //             if(err){
+        //                 res.send('Error saving book.');
+        //             }else{
+        //                 console.log(book);
+        //                 res.send(book);
+        //             }
+        //         });  
+        // });
+
+        // self.app.put('/book/:id', function(req, res){
+            
+        //     console.log(' Modifying ' + req.params.id);
+            
+        //     Book.update({
+        //        _id: req.params.id
+        //     }, {$set: {title: req.body.title}},    
+        //         function(err, newBook) {
+        //             if(err){
+        //                 console.log(err);
+        //             } else {
+        //                 console.log(newBook);
+        //                 res.send(newBook);
+        //             }
+        //         }); 
+        // });
         
         //  Start the app on the specific interface (and port).
         self.app.listen(self.port, self.ipaddress, function() {
