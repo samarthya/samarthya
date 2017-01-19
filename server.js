@@ -213,7 +213,7 @@ var SampleApp = function() {
                     }else{
                         console.log(comments);
                         //res.send(comments)
-                        res.send('<html><body>Thank you!</body></html>');
+                        //res.send('<html><body>Thank you!</body></html>');
                         res.redirect('/');
                     }
                 });
