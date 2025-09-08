@@ -41,9 +41,13 @@ I'm a passionate Software Development Manager with over 20+ years of industry ex
 
 ## 📝 Latest Blog Posts
 
+I write about technology, software architecture, and leadership. Check out my recent articles:
+
 <!-- BLOG-POST-LIST:START -->
-- [Coming soon...]()
+<!-- The blog posts will be automatically inserted here by the GitHub Action -->
 <!-- BLOG-POST-LIST:END -->
+
+▶ [Read more blog posts](https://blog.samarthya.me)
 
 ## 🎯 Professional Journey
 
