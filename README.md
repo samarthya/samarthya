@@ -1,4 +1,4 @@
-# Engineering Leader & Java Architect 👨‍💻
+# Engineering Leader & Architect 👨‍💻
 
 <div align="center">
   <img src="assets/images/github-header-image.png" alt="banner" />
