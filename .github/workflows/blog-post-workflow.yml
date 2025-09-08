@@ -15,8 +15,12 @@ jobs:
         with:
           feed_list: "https://blog.samarthya.me/wps/feed"
           max_post_count: 5
-          template: "- **[$title]($url)** - *$date*"
+          template: "- **[$title]($url)** - *$date* $newline *$description*"
           date_format: "mmmm d, yyyy"
+          description_max_length: 100
           tag_post_pre_newline: true
+          filter_comments: true
           disable_sort: false
           categories_template: "[$category]"
+          retry_count: 3
+          enable_keepalive: true

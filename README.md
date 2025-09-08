@@ -41,13 +41,22 @@ I'm a passionate Software Development Manager with over 20+ years of industry ex
 
 ## 📝 Latest Blog Posts
 
-I write about technology, software architecture, and leadership. Check out my recent articles:
+I write about technology, software architecture, and leadership on my blog. Here are my recent articles:
 
 <!-- BLOG-POST-LIST:START -->
-<!-- The blog posts will be automatically inserted here by the GitHub Action -->
+<!-- This section is automatically updated by GitHub Actions using my WordPress feed -->
 <!-- BLOG-POST-LIST:END -->
 
-▶ [Read more blog posts](https://blog.samarthya.me)
+> 💡 These posts are automatically fetched from [blog.samarthya.me](https://blog.samarthya.me) and updated hourly.
+
+📚 **Topics I Write About:**
+- Software Architecture & Design Patterns
+- Cloud Computing & DevOps
+- Leadership & Team Management
+- Technology Trends & Innovation
+- Best Practices & Technical Tutorials
+
+[▶ Read more articles on my blog](https://blog.samarthya.me)
 
 ## 🎯 Professional Journey
 
@@ -81,7 +90,7 @@ I write about technology, software architecture, and leadership. Check out my re
 ### 💫 Social Links
 
 [<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />](https://linkedin.com/in/samarthyasaurabh)
-[<img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />](https://twitter.com/PahadiPandit)
+[<img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />](https://twitter.com/PahadiPandit)
 [<img src="https://img.shields.io/badge/Blog-FF5722?style=for-the-badge&logo=blogger&logoColor=white" />](https://blog.samarthya.me)
 [<img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" />](https://samarthya.me)
 
@@ -92,7 +101,7 @@ I write about technology, software architecture, and leadership. Check out my re
 | 💼 Professional | [LinkedIn Profile](https://linkedin.com/in/samarthyasaurabh) |
 | 📝 Blog & Articles | [blog.samarthya.me](https://blog.samarthya.me) |
 | 📧 Contact | [Contact Form](https://blog.samarthya.me/contact) |
-| 🐦 Twitter | [@PahadiPandit](https://twitter.com/PahadiPandit) |
+| 🔠 X (Twitter) | [@PahadiPandit](https://twitter.com/PahadiPandit) |
 
 💡 Feel free to reach out for collaborations, opportunities, or just a tech chat! I'm always open to discussing new ideas and projects.
 
