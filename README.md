@@ -1,7 +1,7 @@
 # Engineering Leader & Java Architect 👨‍💻
 
 <div align="center">
-  <img src="assets/images/github-header-image.svg" alt="banner" />
+  <img src="assets/images/github-header-image.png" alt="banner" />
 </div>
 
 ## About Me 🎯
