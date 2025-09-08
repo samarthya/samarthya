@@ -89,7 +89,7 @@ I'm a passionate Software Development Manager with over 20+ years of industry ex
 - 💼 **Professional Inquiries**: [LinkedIn](https://linkedin.com/in/samarthyasaurabh)
 - 📝 **Blog & Articles**: [blog.samarthya.me](https://blog.samarthya.me)
 - 📧 **Email**: [Contact Form](https://blog.samarthya.me/contact)
-- 🐦 **Twitter**: [@samarthya](https://twitter.com/samarthya)
+- 🐦 **Twitter**: [@samarthya](https://twitter.com/PahadiPandit)
 
 Feel free to reach out for collaborations, opportunities, or just a tech chat! I'm always open to discussing new ideas and projects.
 
