@@ -82,9 +82,9 @@ graph TD
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/samarthyasaurabh)
-[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PahadiPandit)
-[![Blog](https://img.shields.io/badge/Blog-%23FF5722.svg?style=for-the-badge&logo=blogger&logoColor=white)](https://blog.samarthya.me)
+| [💼 LinkedIn](https://linkedin.com/in/samarthyasaurabh) | [🐦 X (Twitter)](https://twitter.com/PahadiPandit) | [📝 Technical Blog](https://blog.samarthya.me) |
+|:---:|:---:|:---:|
+| Professional Network | Updates & Insights | Articles & Tutorials |
 
 </div>
 
