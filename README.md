@@ -46,7 +46,12 @@ Engineering Manager with 20+ years of experience in software development and tea
 I write about engineering leadership, security best practices, and technical architecture. Here are my recent articles:
 
 <!-- BLOG-POST-LIST:START -->
-<!-- This section is automatically updated by GitHub Actions using my WordPress feed -->
+- **[Dialectic Inquiry](https://blog.samarthya.me/wps/2025/03/14/dialectic-inquiry/?utm_source=rss&utm_medium=rss&utm_campaign=dialectic-inquiry)** - *March 14, 2025* 
+ *Dialectic Inquiry: A Powerful Tool for Critical Thinking and Problem Solving Dialectic inquiry is a...*- **[Linear Programming &lpar;LP&rpar;](https://blog.samarthya.me/wps/2025/02/14/linear-programming-lp/?utm_source=rss&utm_medium=rss&utm_campaign=linear-programming-lp)** - *February 14, 2025* 
+ *What is Linear Programming? Linear programming is a mathematical technique used to find the best pos...*- **[Monte Carlo Optimisation](https://blog.samarthya.me/wps/2025/02/14/monte-carlo-optimisation/?utm_source=rss&utm_medium=rss&utm_campaign=monte-carlo-optimisation)** - *February 14, 2025* 
+ *Imagine you&amp;#8217;re trying to find the best solution to a problem, but the problem is really comple...*- **[sed – Stream Editor](https://blog.samarthya.me/wps/2025/02/11/sed-stream-editor/?utm_source=rss&utm_medium=rss&utm_campaign=sed-stream-editor)** - *February 11, 2025* 
+ *In the realm of Unix-like operating systems, where command-line prowess reigns supreme, sed stands t...*- **[Comparison of Competing Forecasting Models](https://blog.samarthya.me/wps/2025/02/07/comparison-of-competing-forecasting-models/?utm_source=rss&utm_medium=rss&utm_campaign=comparison-of-competing-forecasting-models)** - *February 7, 2025* 
+ *Performance Measure Description Interpretation Advantages Disadvantages Mean Absolute Error &lpar;MAE&rpar; Av...*
 <!-- BLOG-POST-LIST:END -->
 
 > 💡 These posts are automatically fetched from [blog.samarthya.me](https://blog.samarthya.me) and updated hourly.
