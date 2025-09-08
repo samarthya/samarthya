@@ -32,35 +32,36 @@ const engineeringManager = {
 
 ## Technical Leadership 🛠️
 
-<div align="center">
+### Core Technologies
 
-| Java Enterprise | Spring Framework | AWS Cloud | DevOps |
-|:-:|:-:|:-:|:-:|
-| ☕ | 🍃 | ☁️ | ⚙️ |
+- **Java Enterprise** ☕ - Architecture & Development
+- **Spring Framework** 🍃 - Microservices & Cloud
+- **AWS Cloud** ☁️ - Infrastructure & DevOps
+- **Ansible** ⚙️ - Automation & IaC
 
-</div>
+### Security & Quality Focus 🛡️
 
-## Security & Quality Focus 🛡️
+#### Security Practices
+- **Static Analysis (SAST)** - Code security scanning
+- **Dynamic Testing (DAST)** - Runtime security testing
+- **Dependency Scanning (SCA)** - Supply chain security
+- **Compliance Automation** - Security standards enforcement
 
-```mermaid
-graph TD
-    A[Security First] --> B[Static Analysis]
-    A --> C[Dynamic Testing]
-    A --> D[Dependency Scanning]
-    E[Quality Gates] --> F[Code Coverage]
-    E --> G[Technical Debt]
-    E --> H[Vulnerability Checks]
-```
+#### Quality Gates
+- **Code Coverage** - Maintaining 80%+ coverage
+- **Technical Debt** - Keeping debt ratio < 5%
+- **Security Scanning** - Zero critical vulnerabilities
+- **Performance** - Response time < 200ms
 
 ## Engineering Metrics 📊
 
-<div align="center">
+### Key Performance Indicators
 
-| Code Quality | Security Score | Performance Index |
-|:-:|:-:|:-:|
-| 95% ✨ | A+ 🔒 | 99.9% ⚡ |
-
-</div>
+| Metric | Status | Target |
+|:--|:--|:--|
+| Code Quality | ⭐⭐⭐⭐⭐ | 95% |
+| Security Score | 🛡️🛡️🛡️🛡️🛡️ | A+ |
+| Performance | ⚡⚡⚡⚡⚡ | 99.9% |
 
 ## Latest Articles 📝
 
@@ -70,23 +71,40 @@ graph TD
 
 ## Areas of Expertise 🎯
 
-| Area | Expertise |
-|:--|:--|
-| 👥 | Engineering Team Leadership & Mentoring |
-| 🛡️ | Security & Quality Assurance |
-| 🗺️ | Release Planning & Roadmap Development |
-| 🏗️ | Technical Architecture & System Design |
-| ♾️ | DevSecOps & Automation |
+### Leadership & Technical Skills
+
+- 👥 **Team Leadership**
+  - Engineering team management
+  - Technical mentoring
+  - Career development
+
+- 🛡️ **Security & Quality**
+  - DevSecOps implementation
+  - Quality automation
+  - Security best practices
+
+- 🗺️ **Strategic Planning**
+  - Release management
+  - Technical roadmap
+  - Architecture decisions
+
+- 🏗️ **Architecture**
+  - System design
+  - Cloud infrastructure
+  - Microservices
+
+- ♾️ **DevOps**
+  - CI/CD pipelines
+  - Infrastructure as Code
+  - Automation
 
 ## Let's Connect 🤝
 
-<div align="center">
+### Professional Networks
 
-| [💼 LinkedIn](https://linkedin.com/in/samarthyasaurabh) | [🐦 X (Twitter)](https://twitter.com/PahadiPandit) | [📝 Technical Blog](https://blog.samarthya.me) |
-|:---:|:---:|:---:|
-| Professional Network | Updates & Insights | Articles & Tutorials |
-
-</div>
+- 💼 **[LinkedIn](https://linkedin.com/in/samarthyasaurabh)** - Professional Network & Updates
+- 🐦 **[X (Twitter)](https://twitter.com/PahadiPandit)** - Tech Insights & Discussions
+- 📝 **[Technical Blog](https://blog.samarthya.me)** - Articles & Tutorials
 
 ---
 
