@@ -15,3 +15,6 @@ jobs:
         with:
           feed_list: "https://blog.samarthya.me/feed"
           max_post_count: 5
+          template: "- [$title]($url) - $date"
+          date_format: "yyyy-mm-dd"
+          tag_post_pre_newline: true

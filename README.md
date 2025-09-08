@@ -73,7 +73,7 @@ I'm a passionate Software Development Manager with over 20+ years of industry ex
 - Performance Optimization
 - Technical Strategy
 
-## 🤝 Connect With Me
+## 🤝 Let's Connect!
 
 <div align="center">
 
@@ -83,6 +83,15 @@ I'm a passionate Software Development Manager with over 20+ years of industry ex
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://samarthya.me)
 
 </div>
+
+### 📬 Get in Touch
+
+- 💼 **Professional Inquiries**: [LinkedIn](https://linkedin.com/in/samarthyasaurabh)
+- 📝 **Blog & Articles**: [blog.samarthya.me](https://blog.samarthya.me)
+- 📧 **Email**: [Contact Form](https://blog.samarthya.me/contact)
+- 🐦 **Twitter**: [@samarthya](https://twitter.com/samarthya)
+
+Feel free to reach out for collaborations, opportunities, or just a tech chat! I'm always open to discussing new ideas and projects.
 
 ---
 
